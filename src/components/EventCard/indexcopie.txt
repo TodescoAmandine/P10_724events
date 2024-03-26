@@ -38,9 +38,12 @@ EventCard.propTypes = {
 };
 
 EventCard.defaultProps = {
+  //date: new Date(),
   imageAlt: "image",
   small: false,
-
+  // title: "Réalisations",
+  // imageSrc: "./images/hall-expo.png",
+  // label: "Label par défaut",
 }
 
 export default EventCard;
