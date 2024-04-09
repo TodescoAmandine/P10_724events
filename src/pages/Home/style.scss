@@ -130,7 +130,7 @@ p {
   top: -32px;
   background-color: white;
   width: 100%;
-  overflow: hidden;
+ overflow: hidden;
 }
 
 footer {
@@ -180,6 +180,7 @@ footer {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  border: solid 1px blue;
   div {
     text-align: center;
     margin-bottom: 16px;

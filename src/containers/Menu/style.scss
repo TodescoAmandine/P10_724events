@@ -25,6 +25,10 @@ nav {
         text-decoration: none;
         color: $black;
       }
+      .link{
+        scroll-behavior: smooth;
+        transition: all 0.5s ease-in-out;
+      }
     }
     padding-right: 50px;
   }

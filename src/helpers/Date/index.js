@@ -12,5 +12,5 @@ export const MONTHS = {
   11: "novembre",
   12: "décembre",
 };
-
+//ajout de +1 pour correspondre à l'index du tableau
 export const getMonth = (date) => MONTHS[date.getMonth()+1];

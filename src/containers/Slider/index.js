@@ -11,14 +11,14 @@ const Slider = () => {
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
     new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
+  //next card utilise la fonction setIndex pour mettre à jour l'index
+  //l'index est incrémenté de 1 s'il est inférieur à la longueur du tableau trié sinon il est réinitialisé à 0
 const nextCard = () => {
   setIndex((prevIndex) =>
     prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0
   );
 
-  // NextCard : utilise la fonction setIndex pour mettre à jour l'index.
-  // L'index est incrémenté de 1 s'il est inférieur à la longueur du tableau trié,
-  // sinon il est réinitialisé à 0.
+// useEffect : exécute la fonction nextCard toutes les 5 secondes
 };
 useEffect(
   () => {

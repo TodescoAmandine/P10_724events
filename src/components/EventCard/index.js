@@ -3,11 +3,6 @@ import { getMonth } from "../../helpers/Date";
 
 import "./style.scss";
 
-// Essai méthode sort
-// const eventsTrie = events?.sort((evtA, evtB) =>
-//   getMonth(new Date(evtA.date)) < getMonth(new Date(evtB.date)) ? -1 : 1
-// );
-
 const EventCard = ({
   imageSrc,
   imageAlt,
@@ -23,7 +18,7 @@ const EventCard = ({
       {...props}
     >
       <div className="EventCard__imageContainer">
-        <img data-testid="card-image-testid" src={imageSrc} alt={imageAlt} />
+        <img className="EventCard_image"  data-testid="card-image-testid" src={imageSrc} alt={imageAlt} />
         <div className="EventCard__label">{label}</div>
       </div>
       <div className="EventCard__descriptionContainer">
