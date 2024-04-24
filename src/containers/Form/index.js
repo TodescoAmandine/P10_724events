@@ -4,7 +4,6 @@ import Field, { FIELD_TYPES } from "../../components/Field";
 import Select from "../../components/Select";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 
-//duréé diminué à 900ms pour les tests
 const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 900); })
 
 const Form = ({ onSuccess, onError }) => {
@@ -14,11 +13,10 @@ const Form = ({ onSuccess, onError }) => {
     async (evt) => {
       evt.preventDefault();
       setSending(true);
-      // We try to call mockContactApi
+            // We try to call mockContactApi + ajout de onSucces qui est une fonction qui est appelée si la requête est un succès//
       try {
         await mockContactApi();
         setSending(false);
-        //ajout de onSuccess
         onSuccess();
       } catch (err) {
         setSending(false);
@@ -41,10 +39,10 @@ const Form = ({ onSuccess, onError }) => {
             type="large"
             titleEmpty
           />
+
           <Field 
           placeholder="Entrez votre email" 
           label="Email" 
-          //ajout de field type email manquant
           type={FIELD_TYPES.EMAIL}/>
           <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
             {sending ? "En cours" : "Envoyer"}

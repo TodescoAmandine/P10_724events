@@ -15,9 +15,9 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const {data} = useData()
-  // variable pour tier les événements par date
+  // variable pour tier les événements par date//
   const sortedEvents = data?.events ? [...data.events].sort((a, b) => new Date(b.date) - new Date(a.date)) : [];
-  // permets de prendre le premier événement le plus récent
+  // permets de prendre le premier événement le plus récent//
   const last = sortedEvents[0];  
   return <>
     <header>
@@ -121,13 +121,17 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
+        {last && (
+            <EventCard
+              data-testid="last-event-card"
+              imageSrc={last?.cover}
+              imageAlt={last?.description}
+              title={last?.title}
+              date={new Date(last?.date)}
+              small
+              label={last?.type}
+            />
+          )}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
